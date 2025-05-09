@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "M248 Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#B8860B",
+    "light": "#F3D34A",
+    "dark": "#B8860B"
   },
   "favicon": "/logo/favicon.svg",
   "navigation": {
@@ -56,7 +56,8 @@
   "background": {
     "decoration": "windows",
     "color": {
-      "dark": "#000a04"
+      "dark": "#1e1e1e",
+      "light": "#fff"
     }
   },
   "integrations": {
@@ -105,7 +106,7 @@
       "twitter:title": "RappiTours Trail Management System Documentation",
       "twitter:description": "Documentation for the Trails Management System for RappiTours",
       "twitter:image": "/logo/dark.svg",
-      "theme-color": "#16a34a"
+      "theme-color": "#B8860B"
     },
     "indexing": "navigable"
   }
