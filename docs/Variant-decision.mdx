@@ -1,6 +1,6 @@
 ---
 title: "Variant Decision"
-description: "Decisionmaking about what technology to use"
+description: "Decision making about what technology to use"
 icon: "files"
 mode: "wide"
 ---
@@ -21,7 +21,8 @@ Wir haben für dieses Projekt mehrere Frameworks angeschaut und (auch mithilfe v
 | **Gesamt (max. 100 Punkte)**         | **100%**   | **92.8**     | 75.4    | 80     | 79.6   | 54.2   | 87.2    | 76.6                 | 70.6          | 72.6                    |
 
 <Note>  
-Diese Tabelle wurde mit ChatGPT-4o am 02.05.2025 generiert.  
+Diese Tabelle wurde mit ChatGPT-4o am 02.05.2025 generiert:
+
 <Expandable title="Prompt">
 ```markdown
 generiere mir eine tabelle wo ich verschiedene moderne technologien vergleiche um ein frontend für eine Trail-App und begründe was du auswählen würdest.
@@ -39,9 +40,13 @@ generiere mir eine tabelle wo ich verschiedene moderne technologien vergleiche u
 Die Tabelle wurde mit unseren eigenen Gewichtungen und Gedanken angepasst.  
 </Note>
 
-Wir haben uns dann entschieden, React + Vite zu verwenden. Der Nachteil dieser Entscheidung ist jedoch, dass React und Vite nur für ein Frontend Sinn machen, denn man hat nicht wirklich die Server-Side-Funktionalitäten wie bei Next.js.
+<Check>
+Wir haben uns dann entschieden, React + Vite zu verwenden. Der Nachteil dieser Entscheidung ist jedoch, dass React und Vite nur für ein Frontend Sinn macht, denn man hat nicht wirklich die Server-Side-Funktionalitäten wie beim Next.js
+</Check>
 
-Wir haben uns auch ein paar Gedanken über das UI gemacht. Wir haben uns über Styleguides (Google Material Design, Bootstrap, Semantic UI, Tailwind CSS) informiert und auch gesehen, was uns am meisten anspricht.
+## UI Framework
+
+Wir haben uns auch ein paar Gedanken über das UI gemacht. Wir haben uns über verschiedeste Styleguides (Google Material Design, Bootstrap, Semantic UI, Tailwind CSS) informiert und auch gesehen, was uns am meisten anspricht.
 
 | Styleguide                 | Unsere Gedanken                                                                                                                                                                                  |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -50,15 +55,17 @@ Wir haben uns auch ein paar Gedanken über das UI gemacht. Wir haben uns über S
 | **Semantic UI**            | Vielleicht schon ein bisschen veraltet? Erinnert uns an ältere Websites von 2014.                                                                                                                |
 | **Tailwind CSS**           | Ein CSS-Framework, das wir als sehr schön empfinden. Wir hatten tatsächlich schon einmal davon gehört und wollten auch einmal mit Tailwind arbeiten. Wahrscheinlich werden wir dieses verwenden. |
 
-**Unsere endgültige Wahl: Tailwind CSS + shadcn/ui**
 
-Wir haben uns schliesslich für **Tailwind CSS** als Design-Basis (CSS-Framework) entschieden und wollten auch eine Component Library wie **shadcn/ui** ausprobieren. Uns gefällt das Layout bzw. das Design von shadcn/ui sehr.
+<Check>
+Wir haben uns schliesslich für **[Tailwind CSS](https://tailwindcss.com/)** als Design-Basis (CSS-Framework) entschieden und wollten auch eine Component Library wie **[shadcn/ui](https://ui.shadcn.com)** ausprobieren. Uns gefällt das Layout bzw. das Design von shadcn/ui sehr.
+</Check>
+
 
 <Note>  
 Uns ist bewusst, dass shadcn/ui kein Styleguide wie Material Design ist, sondern eine Library, die uns beim Aufbau des Frontends aus UI/UX-Perspektive sehr helfen könnte.  
 </Note>
 
-Mit Tailwind CSS + shadcn/ui setzen wir auf ein modernes, flexibles und zukunftssicheres UI-Setup (siehe Tailwind CSS), das unserer Meinung nach sehr schön aussieht, aber auch alle Styling-Guidelines erfüllt, die im Dokument *05\_Usability.pdf* beschrieben sind.
+Mit Tailwind CSS + shadcn/ui setzen wir auf ein modernes, flexibles und zukunftssicheres UI-Setup, das unserer Meinung nach sehr schön aussieht, aber auch alle Styling-Guidelines erfüllt, die im Dokument *[05\_Usability.pdf](https://github.com/bwz-imst23a/m248/blob/main/01_Intro/11_Anforderungsspezifikation.pdf)* beschrieben sind.
 Es ist auch eine **aktuelle UI-Library**, was zusätzlich dem Objekt des Moduls *(ICT-Lösungen mit aktuellen Technologien realisieren)* entspricht.
 
 

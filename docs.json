@@ -53,6 +53,28 @@
       ]
     }
   },
+  "background": {
+    "decoration": "windows",
+    "color": {
+      "dark": "#000a04"
+    }
+  },
+  "integrations": {
+    "telemetry": {
+      "enabled": false
+    }
+  },
+  "banner": {
+    "content": "[⚠️The Trails Management App is still in Development⚠️](https://github.com/IMS-coding-projects/M248)",
+    "dismissible": true
+  },
+  "contextual": {
+  "options": [
+    "copy",
+    "chatgpt",
+    "claude"
+  ]
+},
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -68,5 +90,23 @@
     "socials": {
       "github": "https://github.com/IMS-coding-projects/M248"
     }
+  },
+  "seo": {
+    "metatags": {
+      "title": "RappiTours Trail Management System Documentation",
+      "description": "Documentation for the Trails Management System for RappiTours",
+      "keywords": "RappiTours, Management System, Trails",
+      "robots": "index, follow",
+      "og:title": "RappiTours Trail Management System Documentation",
+      "og:type": "website",
+      "og:description": "Documentation for the Trails Management System for RappiTours",
+      "og:image": "/logo/dark.svg",
+      "og:url": "https://ims-coding-projects.mintlify.app/",
+      "twitter:title": "RappiTours Trail Management System Documentation",
+      "twitter:description": "Documentation for the Trails Management System for RappiTours",
+      "twitter:image": "/logo/dark.svg",
+      "theme-color": "#16a34a"
+    },
+    "indexing": "navigable"
   }
 }
