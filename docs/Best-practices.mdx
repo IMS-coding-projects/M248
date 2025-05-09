@@ -4,6 +4,29 @@ description: "Best practices Learings"
 icon: "certificate"
 ---
 
-<Note>
-    Will have to update while working on the project.
-</Note>
+## Kanban Board
+
+Wir haben gelernt, dass man die folgenden Dinge machen sollte um ein Kanban auf GitHub zu erstellen:
+
+<Steps>
+  <Step title="Erstelle ein GitHub Projekt">
+    Erstelle ein GitHub Projekt für dass Repository in dem man das Kanban haben will. 
+    <Tip>
+    Am besten nimmt man die Kanban Vorlage von GitHub selbst.
+    </Tip>
+  </Step>
+  <Step title="Issues erstellen">
+    Für jedes Use Case erstelle ein neues Issue mit dem Typ `Feature`. Danach, erstelle für jede Aufgabe, die zum erreichen dieses Use Case nötig ist, ein Issue mit dem Typ `Task` und füge diesen Task als `Child Issue` vom vorher erstellen Feature Issue.
+    
+    <Tip>
+    Vergiss nicht die `Label`, `Milestone` und `Assignees` Fields zu verwenden
+    </Tip>
+  </Step>
+  <Step title="Ändere die Standardansicht">
+    
+    Um einen besseren Überblick über die verschiedene Issues zu haben, empfiehlt es, das Board anderst anzuzeigen:
+    <Frame caption="Gruppiere die Issues nach Parent Issues/Use Case um einen besseren Überblick zu erhalten.">
+      <img src="/images/kanban_change_view.png" />
+    </Frame>
+  </Step>
+</Steps>
