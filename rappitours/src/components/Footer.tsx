@@ -1,6 +1,6 @@
 import github from "/github-logo.svg";
 
-function Footer() {
+export default function Footer( ) {
     return (
         <footer className="bg-secondary text-primary py-3">
             <div className="container mx-auto text-center text-sm flex items-center justify-between px-3">
@@ -18,4 +18,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+//export default Footer;
