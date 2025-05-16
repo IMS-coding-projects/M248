@@ -1,13 +1,16 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MainContent from '@/components/MainContent';
+import {ThemeProvider} from "@/components/theme-provider.tsx";
 
 function App() {
   return (
     <>
-      <Header/>
-      <MainContent/>
-      <Footer/>
+        <ThemeProvider>
+        <Header/>
+        <MainContent/>
+        <Footer/>
+        </ThemeProvider>
     </>
   )
 }
