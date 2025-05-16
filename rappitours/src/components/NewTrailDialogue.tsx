@@ -2,7 +2,9 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, Dialog
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import * as React from "react";
+import { DateTimePicker24h } from "@/components/ui/DateTimePicker24h";
+import {toast} from "sonner"; // Import the new DateTimePicker24h component
 
 export function NewTrailDialog() {
     return (
@@ -20,18 +22,14 @@ export function NewTrailDialog() {
                     </DialogDescription>
                 </DialogHeader>
                 <form>
-                    <div className="grid gap-4">
-                        <div>
-                            <Label htmlFor="trail-name">Trail Name</Label>
-                            <Input id="trail-name" type="text" placeholder="Enter trail name" required />
-                        </div>
-                        <div>
-                            <Label htmlFor="trail-description">Description</Label>
-                            <Textarea id="trail-description" placeholder="Enter trail description" required />
-                        </div>
-                    </div>
+                    <NewTrail/>
                     <DialogFooter className="mt-4">
-                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    toast("Uh oh!", {description: "This feature is not implemented yet :("})
+                                }}
+                        >
                             Create
                         </Button>
                         <DialogClose asChild>
@@ -43,5 +41,30 @@ export function NewTrailDialog() {
                 </form>
             </DialogContent>
         </Dialog>
+    );
+}
+
+function NewTrail() {
+    const [date, setDate] = React.useState<Date>();
+
+    return (
+            <div className="grid gap-4">
+                <div className="grid gap-2">
+                    <Label htmlFor="trail-name">Trail Name</Label>
+                    <Input id="trail-name" type="text" placeholder="Enter trail name" required />
+                </div>
+                <div className="grid gap-2">
+                    <Label htmlFor="trail-from">From:</Label>
+                    <Input id="trail-from" type="text" placeholder="Origin" required />
+                </div>
+                <div className="grid gap-2">
+                    <Label htmlFor="trail-to">To:</Label>
+                    <Input id="trail-to" type="text" placeholder="Destination" required />
+                </div>
+                <div className="grid gap-2">
+                    <Label htmlFor="trail-date">Date & Time:</Label>
+                    <DateTimePicker24h selectedDate={date} onDateChange={setDate} />
+                </div>
+            </div>
     );
 }

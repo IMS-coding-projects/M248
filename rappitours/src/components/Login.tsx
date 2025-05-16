@@ -20,7 +20,7 @@ export function Login() {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant={"outline"}
-                        className={"border-0 bg-primary text-secondary hover:bg-primary hover:text-secondary dark:bg-primary dark:text-secondary dark:hover:bg-primary dark:hover:text-secondary hover:cursor-pointer"}>
+                        className={"border-0 bg-primary text-secondary hover:bg-primary hover:text-secondary dark:bg-primary dark:text-secondary dark:hover:bg-primary dark:hover:text-secondary"}>
                     <LogInIcon/>Login
                 </Button>
             </DialogTrigger>
@@ -34,7 +34,7 @@ export function Login() {
                 <LoginForm />
                 <DialogFooter className="flex sm:justify-center">
                     <DialogClose asChild>
-                        <Button type="button" variant="secondary" className={"hover:cursor-pointer"}>
+                        <Button type="button" variant="secondary">
                             Close
                         </Button>
                     </DialogClose>
@@ -68,14 +68,14 @@ export function LoginForm({
                                 onClick={() => {
                                     toast("Uh oh!", {description: "This feature is not implemented yet :("})
                                 }}
-                                className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:cursor-pointer"
+                                className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                             >
                                 Forgot your password?
                             </a>
                         </div>
                         <Input id="password" type="password" required/>
                     </div>
-                    <Button type="submit" className="w-full hover:cursor-pointer"                        
+                    <Button type="submit" className="w-full"                        
                             onClick={(event) => {
                                 event.preventDefault()
                                 toast("Uh oh!", {

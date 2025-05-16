@@ -4,8 +4,8 @@ import {NewTrailDialog} from "@/components/NewTrailDialogue.tsx";
 function Main() {
     return (
         <>
-            <div className="container mx-auto p-4 h-screen flex flex-col items-center">
-                <div className="mb-4 flex justify-between w-full">
+            <div className="container mx-auto p-4 h-screen flex flex-col items-center w-full">
+                <div className="mb-4 flex justify-between items-center w-full">
                     <NewTrailDialog/>
 
                     <button className="px-4 py-2 bg-destructive text-white rounded-lg shadow-md hover:bg-destructive/90">
