@@ -1,8 +1,9 @@
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
-import {NewTrailDialog} from "@/components/NewTrailDialogue.tsx";
+import {NewTrailDialog} from "@/components/NewTrailDialog.tsx";
 import {Sun} from "lucide-react";
 import {Cloudy} from "lucide-react";
 import {Button} from "@/components/ui/button";
+import {DeleteTrailDialog} from "@/components/DeleteTrailDialog.tsx";
 
 function Main() {
     return (
@@ -10,9 +11,9 @@ function Main() {
             <div className="container mx-auto p-4 h-screen flex flex-col items-center">
                 <div className="mb-4 flex justify-between w-full">
                     <NewTrailDialog/>
-                    <button className="px-4 py-2 bg-destructive text-white rounded-lg shadow-md hover:bg-destructive/90">
+                    <Button variant="destructive" className="px-4 py-2 bg-destructive text-white rounded-lg shadow-md hover:bg-destructive/90">
                         Delete Trails
-                    </button>
+                    </Button>
                 </div>
                 <Accordion type="multiple">
                     <AccordionItem value="item-1" className="border rounded-lg shadow-md p-3 pt-0 pb-0 pl-4 pr-4 mb-4 bg-white dark:bg-secondary min-w-[550px] min-h-[0px] sm:min-w-[550px] sm:min-h-[0px]">
@@ -32,9 +33,7 @@ function Main() {
                             </div>
                             <div className="flex flex-col items-center space-y-4">
                                 <Sun className="min-w-[75px] min-h-[75px]" />
-                                <Button className="min-w-[125px] min-h-[16px] px-4 py-2 bg-destructive text-white rounded-lg shadow-md hover:bg-destructive/90 self-end">
-                                    Delete Trails
-                                </Button>
+                                <DeleteTrailDialog/>
                             </div>
                         </AccordionContent>
                     </AccordionItem>
@@ -55,9 +54,7 @@ function Main() {
                             </div>
                             <div className="flex flex-col items-center space-y-4">
                                 <Cloudy className="min-w-[75px] min-h-[75px]" />
-                                <Button className="min-w-[125px] min-h-[16px] px-4 py-2 bg-destructive text-white rounded-lg shadow-md hover:bg-destructive/90 self-end">
-                                    Delete Trails
-                                </Button>
+                                <DeleteTrailDialog/>
                             </div>
                         </AccordionContent>
                     </AccordionItem>
