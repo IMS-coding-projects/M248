@@ -5,7 +5,7 @@ import {Cloudy} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {DeleteTrailDialog} from "@/components/DeleteTrailDialog.tsx";
 
-function Main() {
+export default function Main() {
     return (
         <>
             <div className="container mx-auto p-4 h-screen flex flex-col items-center">
@@ -64,4 +64,3 @@ function Main() {
     );
 }
 
-export default Main;

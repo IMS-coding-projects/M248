@@ -2,7 +2,7 @@ import {ModeToggle} from "@/components/mode-toggle.tsx";
 import {Login} from "@/components/Login.tsx";
 import logo from "/default_logo.svg";
 
-function Header() {
+export default function Header() {
   return (
       <>
           <header className={"flex items-center justify-between p-3 bg-secondary text-primary"}>
@@ -22,4 +22,3 @@ function Header() {
   );
 }
 
-export default Header;

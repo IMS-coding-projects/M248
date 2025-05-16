@@ -20,7 +20,7 @@ export function DeleteTrailDialog() {
                     Delete Trail
                 </Button>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="sm:max-w-md dark:bg-secondary">
                 <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
