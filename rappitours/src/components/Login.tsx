@@ -20,8 +20,7 @@ export function Login() {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant={"outline"}
-                        className={"border-0 bg-primary text-secondary hover:bg-primary hover:text-secondary dark:bg-primary dark:text-secondary dark:hover:bg-primary dark:hover:text-secondary hover:cursor-pointer"}
-                        >
+                        className={"border-0 bg-primary text-secondary hover:bg-primary hover:text-secondary dark:bg-primary dark:text-secondary dark:hover:bg-primary dark:hover:text-secondary hover:cursor-pointer"}>
                     <LogInIcon/>Login
                 </Button>
             </DialogTrigger>
@@ -29,7 +28,7 @@ export function Login() {
                 <DialogHeader>
                     <DialogTitle>Login</DialogTitle>
                     <DialogDescription>
-                        Continue with your account to manage your trails.
+                        Login with your account to manage your trails.
                     </DialogDescription>
                 </DialogHeader>
                 <LoginForm />
@@ -49,8 +48,9 @@ export function LoginForm({
                               className,
                               ...props
                           }: React.ComponentPropsWithoutRef<"div">) {
-    return (<form>
-            <div className={cn("flex flex-col gap-3", className)} {...props}>
+    return (
+        <div className={cn("flex flex-col gap-3", className)} {...props}>
+            <form>
                 <div className="flex flex-col gap-3">
                     <div className="grid gap-2">
                         <Label htmlFor="email">Email</Label>
@@ -75,26 +75,32 @@ export function LoginForm({
                         </div>
                         <Input id="password" type="password" required/>
                     </div>
-                    <Button type="submit" className="w-full hover:cursor-pointer">
+                    <Button type="submit" className="w-full hover:cursor-pointer"                        
+                            onClick={(event) => {
+                                event.preventDefault()
+                                toast("Uh oh!", {
+                                        description: "This feature is not implemented yet :(",
+                                    }
+                                )
+                    }}>
                         Login
                     </Button>
                 </div>
-                <div className=" text-center text-sm">
+                <div className="mt-4 text-center text-sm">
                     Don&apos;t have an account?{" "}
                     <a
                         onClick={() => {
                             toast("Uh oh!", {
-                                description: "This feature is not implemented yet :(",
-                                style: { color: "var(--primary)" }                            
-                            }
+                                    description: "This feature is not implemented yet :(",
+                                }
                             )
                         }}
-                        className="underline underline-offset-4">
+                        className="underline underline-offset-4 hover:cursor-pointer">
                         Sign up
                     </a>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     )
 }
 

@@ -1,11 +1,21 @@
+import github from "/github-logo.svg";
+
 function Footer() {
-  return (
-    <footer className="bg-secondary text-primary py-6">
-      <div className="container mx-auto text-center">
-        <p className="mb-2">&copy; {new Date().getFullYear()} Rappitours. All rights reserved.</p>
-      </div>
-    </footer>
-  );
+    return (
+        <footer className="bg-secondary text-primary py-3">
+            <div className="container mx-auto text-center text-sm flex items-center justify-between px-3">
+                <div />
+                <p>&copy; {new Date().getFullYear()} Rappitours. All rights reserved.</p>
+                <img
+                    className="hover:cursor-pointer"
+                    onClick={() => window.open('https://github.com/IMS-coding-projects/m248', '_blank')}
+                    src={github}
+                    alt="GitHub Repository"
+                    style={{ width: '25px', height: '25px' }}
+                />
+            </div>
+        </footer>
+    );
 }
 
 export default Footer;
