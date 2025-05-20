@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export function DeleteTrailDialog() {
     return (
         <AlertDialog>
-            <AlertDialogTrigger>
+            <AlertDialogTrigger asChild>
                 <Button variant="destructive" className="min-w-[125px] min-h-[16px] text-white rounded-lg shadow-md hover:bg-destructive/90">
                     Delete Trail
                 </Button>

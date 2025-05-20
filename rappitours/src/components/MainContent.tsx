@@ -15,10 +15,10 @@ export default function Main() {
                         Delete Trails
                     </Button>
                 </div>
-                <Accordion type="multiple">
-                    <AccordionItem value="item-1" className="border rounded-lg shadow-md p-3 pt-0 pb-0 pl-4 pr-4 mb-4 bg-white dark:bg-secondary min-w-[550px] min-h-[0px] sm:min-w-[550px] sm:min-h-[0px]">
-                        <AccordionTrigger className="font-bold text-lg flex items-center">
-                            <div className="flex flex-col">
+                <Accordion type="multiple" >
+                    <AccordionItem value="item-1" className="border rounded-lg shadow-md p-3 pt-0 pb-0 pl-4 pr-4 mb-4 bg-white dark:bg-secondary min-w-[550px] min-h-[0px] sm:min-w-[550px] sm:min-h-[0px] hover:no-underline">
+                        <AccordionTrigger className="hover:cursor-pointer font-bold  text-lg flex items-center">
+                            <div className="flex flex-col ">
                                 <span>Trail 1</span>
                                 <span className="text-xs text-muted-foreground">(UUID-1234)</span>
                             </div>
