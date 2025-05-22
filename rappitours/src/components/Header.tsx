@@ -1,5 +1,5 @@
-import {ModeToggle} from "@/components/mode-toggle.tsx";
-import {Login} from "@/components/Login.tsx";
+import {ModeToggle} from "@/components/ui/mode-toggle.tsx";
+import {LoginDialog} from "@/components/dialogs/LoginDialog.tsx";
 import logo from "/default_logo.svg";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
               </div>
               <div className={"flex items-center gap-4 "}>
                   <ModeToggle/>
-                  <Login/>
+                  <LoginDialog/>
               </div>
           </header>
       </>

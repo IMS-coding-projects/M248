@@ -1,6 +1,6 @@
 import { LogInIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils.ts"
+import { Button } from "@/components/ui/button.tsx"
 import {
     Dialog,
     DialogClose,
@@ -10,12 +10,12 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/dialog.tsx"
+import { Input } from "@/components/ui/input.tsx"
+import { Label } from "@/components/ui/label.tsx"
 import {toast} from "sonner";
 
-export function Login() {
+export function LoginDialog() {
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -68,7 +68,7 @@ export function LoginForm({
                                 onClick={() => {
                                     toast("Uh oh!", {description: "This feature is not implemented yet :("})
                                 }}
-                                className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                                className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:cursor-pointer"
                             >
                                 Forgot your password?
                             </a>
