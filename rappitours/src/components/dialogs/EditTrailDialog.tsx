@@ -15,14 +15,14 @@ import {Label} from "@/components/ui/label.tsx";
 import {Input} from "@/components/ui/input.tsx";
 import {DateTimePicker24h} from "@/components/ui/DateTimePicker24h.tsx";
 
-export default function EditTrailDialog({ id, reloadTrails }: { id: string, reloadTrails: () => void }) {
+export default function EditTrailDialog({disabled, id, reloadTrails }: { disabled?: boolean, id: string, reloadTrails: () => void }) {
 
-    const [dateTime, setDateTime] = React.useState<Date>();
     const formRef = React.useRef<HTMLFormElement>(null);
     const storedTrails = localStorage.getItem(TRAILS_KEY);
     const trails = storedTrails ? JSON.parse(storedTrails) : [];
     const trail = trails.find((trail: Trail) => trail.id === id);
     const [dialogOpen, setDialogOpen] = React.useState(false);
+    const [dateTime, setDateTime] = React.useState<Date | undefined>(new Date(trail.timedate));
     if (!trail) {
         toast.error("Trail not found.");
         return null;
@@ -66,7 +66,7 @@ export default function EditTrailDialog({ id, reloadTrails }: { id: string, relo
     return (
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
-                <Button variant={"default"} className={"w-9/20"}>
+                <Button variant={"default"} className={"w-9/20"} disabled={disabled}>
                     Edit Trail
                 </Button>
             </DialogTrigger>
@@ -79,7 +79,7 @@ export default function EditTrailDialog({ id, reloadTrails }: { id: string, relo
                 </DialogHeader>
 
                 <form ref={formRef} onSubmit={handleSubmit}>
-                    <EditTrail setDateTime={setDateTime} trail={trail} />
+                    <EditTrail setDateTime={setDateTime} dateTime={dateTime} trail={trail} />
                     <DialogFooter className="mt-4">
                         <DialogClose asChild>
                             <Button type="button" variant="outline">
@@ -97,7 +97,7 @@ export default function EditTrailDialog({ id, reloadTrails }: { id: string, relo
     );
 }
 
-function EditTrail({ setDateTime, trail }: { setDateTime: (date: Date) => void, trail: Trail }) {
+function EditTrail({ dateTime, setDateTime, trail }: { dateTime?: Date, setDateTime: (date: Date) => void, trail: Trail }) {
     return (
         <div className="grid gap-4">
             <div className="grid gap-2">
@@ -114,7 +114,7 @@ function EditTrail({ setDateTime, trail }: { setDateTime: (date: Date) => void, 
             </div>
             <div className="grid gap-2">
                 <Label htmlFor="trail-date">Date & Time:</Label>
-                <DateTimePicker24h selectedDate={new Date(trail?.timedate)} onDateChange={setDateTime} />
+                <DateTimePicker24h selectedDate={dateTime} onDateChange={setDateTime} />
             </div>
         </div>
     );
