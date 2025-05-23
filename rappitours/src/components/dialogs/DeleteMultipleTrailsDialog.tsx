@@ -30,7 +30,7 @@ export default function DeleteMultipleTrailsDialog() {
                 {/* TODO: Show the list of trails and also make them selectable. */}
                 <AlertDialogFooter>
                     <AlertDialogCancel asChild>
-                        <Button type="button" variant="secondary">
+                        <Button type="button" variant="outline">
                             Cancel
                         </Button>
                     </AlertDialogCancel>

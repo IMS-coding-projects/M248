@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button.tsx";
 import {toast} from "sonner";
 import { TRAILS_KEY } from "@/components/MainContent.tsx";
 
-export default function DeleteSingleTrailDialog({ reloadTrails, id, ...props }) {
+export default function DeleteSingleTrailDialog({ id, reloadTrails }: { id: string; reloadTrails: () => void }) {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" className={"px-10 bg-secondary hover:bg-secondary/90"}>
+                <Button variant="destructive" className={"px-10"}>
                     Delete
                 </Button>
             </AlertDialogTrigger>
@@ -30,11 +30,11 @@ export default function DeleteSingleTrailDialog({ reloadTrails, id, ...props }) 
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={async () => {await deleteById(id); reloadTrails()}} asChild>
-                        <Button variant={"destructive"}>
-                            Delete
-                        </Button>
-                    </AlertDialogAction>
+                    <Button variant="destructive" className={"px-7"} asChild>
+                        <AlertDialogAction onClick={async () => {await deleteById(id); reloadTrails()}}>
+                           Delete
+                        </AlertDialogAction>
+                    </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
@@ -47,8 +47,7 @@ async function deleteById(id: string) {
         return;
     }
     console.log(id)
-    let storedTrails = localStorage.getItem(TRAILS_KEY);
-    debugger
+    const storedTrails = localStorage.getItem(TRAILS_KEY);
     if (storedTrails) {
         
         const trails = JSON.parse(storedTrails);

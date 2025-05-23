@@ -9,7 +9,7 @@ import * as React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
 
-export default function NewTrailDialog({ reloadTrails, ...props }) {
+export default function NewTrailDialog({ reloadTrails }: { reloadTrails: () => void }) {
     const [dateTime, setDateTime] = React.useState<Date>();
     const [dialogOpen, setDialogOpen] = React.useState(false);
     const formRef = React.useRef<HTMLFormElement>(null);
@@ -38,7 +38,7 @@ export default function NewTrailDialog({ reloadTrails, ...props }) {
                 timedate: dateTime.toISOString(),
                 id: uuidv4()
             };
-            let storedTrails = localStorage.getItem(TRAILS_KEY);
+            const storedTrails = localStorage.getItem(TRAILS_KEY);
             if (storedTrails) {
                 const trails = JSON.parse(storedTrails);
                 trails.push(trail);
@@ -71,14 +71,14 @@ export default function NewTrailDialog({ reloadTrails, ...props }) {
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <NewTrail dateTime={dateTime} setDateTime={setDateTime} />
                     <DialogFooter className="mt-4">
-                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                            Create
-                        </Button>
                         <DialogClose asChild>
-                            <Button type="button" variant="secondary">
+                            <Button type="button" variant="outline">
                                 Cancel
                             </Button>
                         </DialogClose>
+                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                            Create
+                        </Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

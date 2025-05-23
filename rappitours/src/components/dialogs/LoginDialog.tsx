@@ -34,7 +34,7 @@ export function LoginDialog() {
                 <LoginForm />
                 <DialogFooter className="flex sm:justify-center">
                     <DialogClose asChild>
-                        <Button type="button" variant="secondary">
+                        <Button type="button" variant="outline">
                             Close
                         </Button>
                     </DialogClose>

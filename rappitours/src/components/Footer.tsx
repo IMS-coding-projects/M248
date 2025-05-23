@@ -1,14 +1,14 @@
 import github from "/github-logo.svg";
 import {toast} from "sonner";
 
-export default function Footer( ) {
+export default function Footer() {
     return (
         <footer className="bg-secondary text-white py-3">
             <div className="container mx-auto text-center text-sm flex items-center justify-between px-3">
-                <div/>
+                <div />
                 <div>
                     <p>Rappitours all rights reserved {new Date().getFullYear()}</p>
-                    <Link text="Support"/> - <Link text={"Open Source on GitHub"} url={"https://github.com/IMS-coding-projects/m248"}/>
+                    <Link text="Support" /> - <Link text={"Open Source on GitHub"} url={"https://github.com/IMS-coding-projects/m248"} />
                 </div>
                 <img
                     className="hover:cursor-pointer"

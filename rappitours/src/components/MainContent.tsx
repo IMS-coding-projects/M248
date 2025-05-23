@@ -13,11 +13,11 @@ export default function MainContent() {
     const [trails, setTrails] = useState<Array<Trail>>([]);
 
     const reloadTrails = useCallback(() => {
-        let storedTrails = localStorage.getItem(TRAILS_KEY);
+        const storedTrails = localStorage.getItem(TRAILS_KEY);
         if (storedTrails) {
             setTrails(JSON.parse(storedTrails));
         } else {
-            let defaults = defaultTrails();
+            const defaults = defaultTrails();
             localStorage.setItem(TRAILS_KEY, JSON.stringify(defaults));
             setTrails(defaults);
         }
@@ -28,7 +28,7 @@ export default function MainContent() {
     }, [reloadTrails]);
 
     return (
-        <div id="main" className="container mx-auto px-18 pt-6 h-screen flex flex-col items-center w-full">
+        <main id="main" className="container min-h-screen mx-auto px-18 pt-6 flex flex-col items-center w-full ">
             <div className="mb-4 flex justify-between items-center w-full">
                 <NewTrailDialog reloadTrails={reloadTrails} />
                 <DeleteMultipleTrailsDialog />
@@ -41,7 +41,7 @@ export default function MainContent() {
                             <p className="text-sm text-gray-500">Please create a new trail.</p>
                         </div>
                     )}
-                    
+
                     {trails.map((trail) => (
                         <AccordionItem key={trail.id} value={trail.id}>
                             <AccordionTrigger className={"flex justify-between items-center"}>
@@ -78,6 +78,6 @@ export default function MainContent() {
                     ))}
                 </Accordion>
             </div>
-        </div>
+        </main>
     );
 }

@@ -25,6 +25,11 @@ export default function EditTrailDialog() {
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter className="mt-4">
+                    <DialogClose asChild>
+                        <Button type="button" variant="outline">
+                            Cancel
+                        </Button>
+                    </DialogClose>
                     <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90"
                             onClick={(e) => {
                                 e.preventDefault();
@@ -33,11 +38,6 @@ export default function EditTrailDialog() {
                     >
                         Save
                     </Button>
-                    <DialogClose asChild>
-                        <Button type="button" variant="secondary">
-                            Cancel
-                        </Button>
-                    </DialogClose>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
