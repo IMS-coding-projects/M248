@@ -66,8 +66,8 @@ export default function MainContent() {
                                             <div className={"dark:text-black mt-6 sm:mt-0 w-full h-[90px] bg-primary rounded-lg shadow-md flex items-center justify-center text-center"}>
                                                 Picture or Map
                                             </div>
-                                            <div className={"gap-2 flex w-full justify-between"}>
-                                                <EditTrailDialog/>
+                                            <div className={"mt-2 sm:mt-0 gap-2 flex w-full justify-between"}>
+                                                <EditTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
                                                 <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
                                             </div>
                                         </div>
