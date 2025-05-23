@@ -17,7 +17,7 @@ export default function DeleteSingleTrailDialog({ id, reloadTrails }: { id: stri
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" className={"px-10"}>
+                <Button variant="destructive" className={"w-9/20"}>
                     Delete
                 </Button>
             </AlertDialogTrigger>

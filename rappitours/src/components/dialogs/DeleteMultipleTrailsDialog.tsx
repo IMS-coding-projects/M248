@@ -9,14 +9,14 @@ import {
     AlertDialogCancel,
     AlertDialogAction
 } from "@/components/ui/alert-dialog.tsx";
-import { Button } from "@/components/ui/button.tsx";
-import { toast } from "sonner";
+import {Button} from "@/components/ui/button.tsx";
+import {toast} from "sonner";
 
 export default function DeleteMultipleTrailsDialog() {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" >
+                <Button variant="destructive">
                     Delete Trails
                 </Button>
             </AlertDialogTrigger>
@@ -34,16 +34,18 @@ export default function DeleteMultipleTrailsDialog() {
                             Cancel
                         </Button>
                     </AlertDialogCancel>
-                    <AlertDialogAction asChild>
-                        <Button type="submit" className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    toast("Uh oh!", {description: "This feature is not implemented yet :("})
-                                }}
-                        >
+                    <Button type="submit" variant={"destructive"}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                toast("Uh oh!", {description: "This feature is not implemented yet :("})
+                            }}
+                            asChild
+                    >
+                        <AlertDialogAction>
                             Delete
-                        </Button>
-                    </AlertDialogAction>
+                        </AlertDialogAction>
+                    </Button>
+
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

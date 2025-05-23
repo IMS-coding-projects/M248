@@ -9,7 +9,7 @@ import * as React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "sonner";
 
-export default function NewTrailDialog({ reloadTrails }: { reloadTrails: () => void }) {
+export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => void }) {
     const [dateTime, setDateTime] = React.useState<Date>();
     const [dialogOpen, setDialogOpen] = React.useState(false);
     const formRef = React.useRef<HTMLFormElement>(null);
