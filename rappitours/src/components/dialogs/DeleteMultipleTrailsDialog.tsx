@@ -16,7 +16,7 @@ export default function DeleteMultipleTrailsDialog() {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" onClick={() => {toast("Uh oh!", {description: "This feature is not implemented yet :("})}}>
+                <Button variant="destructive" >
                     Delete Trails
                 </Button>
             </AlertDialogTrigger>

@@ -42,40 +42,44 @@ export default function MainContent() {
                         </div>
                     )}
 
-                    {trails.map((trail) => (
-                        <AccordionItem key={trail.id} value={trail.id}>
-                            <AccordionTrigger className={"flex justify-between items-center"}>
-                                <div className="flex flex-col">
-                                    {trail.name}
-                                    <span className="text-xs font-normal">({trail.id})</span>
-                                </div>
-                                <span className={"pl-30"}>
-                                    {new Date(trail.timedate).toLocaleString()}
-                                </span>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <div className={"flex justify-between"}>
-                                    <div>
-                                        <div>{trail.from} to {trail.to}</div>
-                                        <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
-                                        <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
-                                        <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
+                    {trails.map((trail) => {
+                        const isPast = new Date(trail.timedate) < new Date();
+
+                        return (
+                            <AccordionItem className={`${isPast ? "bg-muted-foreground/10 dark:bg-foreground/20" : ""}`} key={trail.id} value={trail.id}>
+                                <AccordionTrigger className="flex justify-between items-center">
+                                    <div className="flex flex-col">
+                                        {trail.name}
+                                        <span className="text-muted-foreground text-xs font-normal">({trail.id})</span>
                                     </div>
+                                    <span className="pl-30">
+                                        {new Date(trail.timedate).toLocaleString()}
+                                    </span>
+                                </AccordionTrigger>
+                                <AccordionContent>
                                     <div className="flex justify-between">
-                                        <div className="flex flex-col gap-2">
-                                            <div className={"w-full h-[90px] bg-primary rounded-lg shadow-md flex mb-5 items-center justify-center text-center"}>
-                                                Picture or Map
-                                            </div>
-                                            <div className={"gap-2 flex"}>
-                                                <EditTrailDialog/>
-                                                <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
+                                        <div>
+                                            <div>{trail.from} to {trail.to}</div>
+                                            <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
+                                            <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
+                                            <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <div className="flex flex-col gap-2">
+                                                <div className={`w-full h-[90px] ${isPast ? "" : "bg-primary"} rounded-lg shadow-md flex mb-5 items-center justify-center text-center`}>
+                                                    Picture or Map
+                                                </div>
+                                                <div className="gap-2 flex">
+                                                    <EditTrailDialog disabled={isPast} />
+                                                    <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails} />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
+                                </AccordionContent>
+                            </AccordionItem>
+                        );
+                    })}
                 </Accordion>
             </div>
         </main>

@@ -9,19 +9,19 @@ import {
 import {Button} from "@/components/ui/button.tsx";
 import {toast} from "sonner";
 
-export default function EditTrailDialog() {
+export default function EditTrailDialog({ disabled }: { disabled?: boolean }) {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant={"default"} className={"px-8"}>
+                <Button variant="default" className="px-8" disabled={disabled}>
                     Edit Trail
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle>Create New Trail</DialogTitle>
+                    <DialogTitle>Edit Trail</DialogTitle>
                     <DialogDescription>
-                        Edit the new trail details below.
+                        Edit the trail details below.
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter className="mt-4">
@@ -30,11 +30,13 @@ export default function EditTrailDialog() {
                             Cancel
                         </Button>
                     </DialogClose>
-                    <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                toast("Uh oh!", {description: "This feature is not implemented yet :("})
-                            }}
+                    <Button
+                        type="submit"
+                        className="bg-primary text-primary-foreground hover:bg-primary/90"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            toast("Uh oh!", { description: "This feature is not implemented yet :(" });
+                        }}
                     >
                         Save
                     </Button>
