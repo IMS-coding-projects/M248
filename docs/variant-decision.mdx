@@ -1,0 +1,51 @@
+---
+title: "Variant Decision"
+description: "Decision making process about what technology to use"
+icon: "files"
+mode: "wide"
+---
+
+## Frontend-Technologie
+
+Wir haben für dieses Projekt mehrere Frameworks angeschaut und (auch mithilfe von LLMs) miteinander verglichen. Anschliessend haben wir eine Entscheidungsmatrix erstellt, um dies besser zu visualisieren.
+
+| Kriterium                            | Gewichtung | React + Vite | Angular | Vue.js | Svelte | jQuery | Next.js | Express + Handlebars | Spring Boot + Thymeleaf |
+| ------------------------------------ | ---------- | ------------ | ------- | ------ | ------ | ------ | ------- | -------------------- | ----------------------- |
+| **Einfaches Setup**                  | 12%        | 9            | 6       | 8      | 9      | 7      | 8       | 7                    | 4                       |
+| **Performance**                      | 15%        | 9            | 7       | 8      | 9      | 4      | 8       | 7                    | 7                       |
+| **Community / Support**              | 15%        | 10           | 9       | 8      | 7      | 6      | 9       | 8                    | 8                       |
+| **Lernkurve**                        | 13%        | 9            | 5       | 7      | 8      | 9      | 7       | 7                    | 5                       |
+| **Modularität & Erweiterbarkeit**    | 13%        | 9            | 8       | 8      | 7      | 5      | 9       | 8                    | 7                       |
+| **TypeScript-Support**               | 12%        | 10           | 9       | 9      | 8      | 3      | 10      | 7                    | 6                       |
+| **Eignung für langfristige Wartung** | 20%        | 10           | 8       | 8      | 7      | 4      | 10      | 8                    | 9                       |
+| **Gesamt (max. 100 Punkte)**         | **100%**   | **92.8**     | 75.4    | 80     | 79.6   | 54.2   | 87.2    | 76.6                 | 72.6                    |
+
+<Note>  
+Diese Tabelle wurde mit ChatGPT-4o am `02.05.2025` generiert:
+
+<Expandable title="Prompt">
+```markdown
+generiere mir eine tabelle wo ich verschiedene moderne technologien vergleiche um ein frontend für eine Trail-App und begründe was du auswählen würdest.
+- Angular
+- React
+- Vue.js
+- Svelte
+- jQuery
+- Express.js
+- next.js
+- ASP.NET Razor Pages
+- Spring Boot (mit Thymeleaf)
+```
+</Expandable>  
+<Warning>
+Die Tabelle wurde mit unseren eigenen Gewichtungen und Gedanken angepasst.  
+</Warning>
+</Note>
+
+<Check>
+Wir haben uns dann entschieden, `React + Vite` zu verwenden. Der Nachteil dieser Entscheidung ist jedoch, dass React und Vite nur für ein Frontend Sinn macht, denn man hat nicht wirklich die Server-Side-Funktionalitäten wie beim `Next.js`. Dafür wollten wir schon immer einmal mit `Vite` und `React` arbeiten und haben uns unteranderem auch dafür entschieden.
+</Check>
+
+<Card title="Usability and UI Choices" icon="swatchbook" href="/docs/usability" horizontal >
+Hier können Sie mehr über die UI-Entscheidungen erfahren, die wir getroffen haben. 
+</Card>

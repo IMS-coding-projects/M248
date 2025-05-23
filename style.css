@@ -1,0 +1,20 @@
+.nav-logo {
+  width: auto;
+  height: 2.6rem;
+  position: relative;
+  object-fit: contain;
+}
+
+#content-side-layout {
+  width: 23%;
+}
+
+#content-side-layout * {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+::selection {
+  background: rgba(228, 201, 83, 0.788);
+  color: #000000;
+}

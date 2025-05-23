@@ -1,0 +1,57 @@
+---
+title: "Usability and UI Choices"
+description: "New Learnings regarding Usability"
+icon: "swatchbook"
+---
+
+
+## Farbschema
+
+<Frame caption="Das Farbschema das wir ausgewählt haben. Primary color: #F2EA7E, Secondary color: #BFA454, Complementary color: #402F29">
+<img src="/images/Farbschema.png"/>
+</Frame>
+
+## UI Framework
+
+Wir haben uns auch ein paar Gedanken über das UI gemacht. Wir haben uns über verschiedeste Styleguides (Google Material Design, Bootstrap, Semantic UI, Tailwind CSS) informiert und auch gesehen, was uns am meisten anspricht.
+
+| Styleguide                 | Unsere Gedanken                                                                                                                                                                                  |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Google Material Design** | Definitiv interessant, jedoch erinnert es für unseren Geschmack zu sehr an Google.                                                                                                               |
+| **Bootstrap**              | Klassisch; sehr schön, aber vielleicht ein bisschen zu weit verbreitet/konventionell.                                                                                                            |
+| **Semantic UI**            | Vielleicht schon ein bisschen veraltet? Erinnert uns an ältere Websites von 2014.                                                                                                                |
+| **Tailwind CSS**           | Ein CSS-Framework, das wir als sehr schön empfinden. Wir hatten tatsächlich schon einmal davon gehört und wollten auch einmal mit Tailwind arbeiten. Wahrscheinlich werden wir dieses verwenden. |
+
+
+<Check>
+Wir haben uns schliesslich für **[Tailwind CSS](https://tailwindcss.com/)** als Design-Basis (CSS-Framework) entschieden und wollten auch eine Component Library wie **[shadcn/ui](https://ui.shadcn.com)** ausprobieren. Uns gefällt das Layout bzw. das Design von shadcn/ui sehr.
+</Check>
+
+<Note>  
+Uns ist bewusst, dass shadcn/ui kein Styleguide wie Material Design ist, sondern eine Library, die uns beim Aufbau des Frontends aus UI/UX-Perspektive sehr helfen könnte.  
+</Note>
+
+Mit Tailwind CSS + shadcn/ui setzen wir auf ein modernes, flexibles und zukunftssicheres UI-Setup, das unserer Meinung nach sehr schön aussieht, aber auch alle Styling-Guidelines erfüllt, die im Dokument *[05\_Usability.pdf](https://github.com/bwz-imst23a/m248/blob/main/01_Intro/11_Anforderungsspezifikation.pdf)* beschrieben sind.
+Es ist auch eine **aktuelle UI-Library**, was zusätzlich dem Objekt des Moduls *(ICT-Lösungen mit aktuellen Technologien realisieren)* entspricht.
+
+Wir hoffen, diese Gedanken sind nachvollziehbar.
+
+## Designs
+
+<CardGroup col="2">
+<Card title="Wireframe" icon="file-vector" href="https://www.figma.com/proto/yDgnqUZYmAcAei5JOV4RBo/RappiTours?node-id=10-179&p=f&t=k1VP2TVKFySBsJ85-0&scaling=contain&content-scaling=fixed&page-id=10%3A179">
+Unser Wireframe kann [hier](https://www.figma.com/proto/yDgnqUZYmAcAei5JOV4RBo/RappiTours?node-id=10-179&p=f&t=k1VP2TVKFySBsJ85-0&scaling=contain&content-scaling=fixed&page-id=10%3A179) gefunden werden.
+</Card>
+
+<Card title="Mockup" icon="file-invoice" href="https://www.figma.com/proto/yDgnqUZYmAcAei5JOV4RBo/RappiTours?node-id=0-1&p=f&t=k1VP2TVKFySBsJ85-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A1046">
+Unser Mockup kann [hier](https://www.figma.com/proto/yDgnqUZYmAcAei5JOV4RBo/RappiTours?node-id=0-1&p=f&t=k1VP2TVKFySBsJ85-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A1046) gefunden werden.
+</Card>
+</CardGroup>
+
+## Usability-Tests
+
+Wir haben es einer Person gegeben, die auch eine Benutzerin von so einer App sein könnte. Ihre Rückmeldung war sehr positiv. Sie fand die App sehr schön und übersichtlich. Was sie uns jedoch empfehlt hat, ist eine art von "Onboarding" zu machen, damit die Benutzer wissen, wie sie die App benutzen können. 
+
+<Check>
+Wir sind dem Feedback sehr dankbar und [haben es](https://github.com/IMS-coding-projects/M248/issues/24) in das Backlog aufgenommen. Es wird voraussichtlich in Release 1.1 implementiert.
+</Check>

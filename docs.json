@@ -1,0 +1,114 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "M248 Docs",
+  "colors": {
+    "primary": "#B8860B",
+    "light": "#F3D34A",
+    "dark": "#B8860B"
+  },
+  "favicon": "/logo/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Abgaben",
+        "groups": [
+          {
+            "group": "Home",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Documentation",
+            "pages": [
+              "docs/variant-decision",
+              "docs/usability",
+              "docs/best-practices",
+              "docs/kaizen"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Work Journal",
+        "groups": [
+          {
+            "group": "Work journal",
+            "pages": [
+              "work-journal/index",
+              "work-journal/dario",
+              "work-journal/chandra"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/IMS-coding-projects/M248",
+          "icon": "github"
+        }
+      ]
+    }
+  },
+  "background": {
+    "decoration": "windows",
+    "color": {
+      "dark": "#1e1e1e",
+      "light": "#fff"
+    }
+  },
+  "integrations": {
+    "telemetry": {
+      "enabled": false
+    }
+  },
+  "banner": {
+    "content": "[🎉🌲 Release 1.0: Trails Management App is officially released! 🏞️ ✨](https://github.com/IMS-coding-projects/M248/releases/tag/v1.0)",
+    "dismissible": false
+  },
+  "contextual": {
+  "options": [
+    "copy",
+    "chatgpt",
+    "claude"
+  ]
+},
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Release 1.0 🎉",
+      "href": "https://github.com/IMS-coding-projects/M248/releases/tag/v1.0"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/IMS-coding-projects/M248"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "title": "RappiTours Trail Management System Documentation",
+      "description": "Documentation for the Trails Management System for RappiTours",
+      "keywords": "RappiTours, Management System, Trails",
+      "robots": "noindex, nofollow",
+      "og:title": "RappiTours Trail Management System Documentation",
+      "og:type": "website",
+      "og:description": "Documentation for the Trails Management System for RappiTours",
+      "og:image": "/logo/dark.svg",
+      "og:url": "https://ims-coding-projects.mintlify.app/",
+      "twitter:title": "RappiTours Trail Management System Documentation",
+      "twitter:description": "Documentation for the Trails Management System for RappiTours",
+      "twitter:image": "/logo/dark.svg",
+      "theme-color": "#B8860B"
+    },
+    "indexing": "navigable"
+  }
+}

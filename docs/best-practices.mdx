@@ -1,0 +1,241 @@
+---
+title: "Best Practices"
+description: "Best practices Learings"
+icon: "certificate"
+---
+
+## Kanban Board
+
+Wir haben gelernt, dass man die folgenden Dinge machen sollte um ein Kanban auf GitHub zu erstellen:
+
+<Steps>
+  <Step title="Erstelle ein GitHub Projekt">
+    Erstelle ein GitHub Projekt für dass Repository in dem man das Kanban haben will.
+
+    <Tip>
+      Am besten nimmt man die Kanban Vorlage von GitHub selbst.
+    </Tip>
+  </Step>
+  <Step title="Issues erstellen">
+    Für jedes Use Case erstelle ein neues Issue mit dem Typ `Feature`. Danach, erstelle für jede Aufgabe, die zum erreichen dieses Use Case nötig ist, ein Issue mit dem Typ `Task` und füge diesen Task als `Child Issue` vom vorher erstellen Feature Issue.
+
+    <Tip>
+      Vergiss nicht die `Label`, `Milestone` und `Assignees` Fields zu verwenden
+    </Tip>
+  </Step>
+  <Step title="Ändere die Standardansicht">
+    Um einen besseren Überblick über die verschiedene Issues zu haben, empfiehlt es, das Board anderst anzuzeigen:
+
+    <Frame caption="Gruppiere die Issues nach Parent Issues/Use Case um einen besseren Überblick zu erhalten.">
+      ![](/images/kanban_change_view.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Vite + React + TypeScript + Tailwind + Shadcn/Ui
+Wir haben gelernt, dass man die folgenden Dinge machen sollte, um ein modernes React-Projekt mit Vite, TypeScript, Tailwind CSS und shadcn/ui effizient aufzusetzen, da wir   bewusst nicht mit "barebone" React und selbst geschriebenem CSS arbeiten wollten, sondern eine strukturierte UI-Component Library einsetzen wollten.
+
+  <Steps>
+    <Step title="Projekt erstellen">
+      Erstelle ein neues Projekt mit Vite und der React + TypeScript Vorlage:
+      ```bash console
+      npm create vite@latest
+      ```
+      Wähle bei der Einrichtung `React + TypeScript` aus.
+    </Step>
+
+    <Step title="Tailwind CSS installieren">
+      Installiere Tailwind CSS mit:
+      ```bash console
+      npm install tailwindcss @tailwindcss/vite
+      ```
+      Ersetze den **kompletten** Inhalt von `src/index.css` mit:
+      ```css src/index.js
+      @import "tailwindcss";
+      ```
+    </Step>
+
+    <Step title="TypeScript Pfade konfigurieren">
+      Ergänze in `tsconfig.json` und `tsconfig.app.json` folgende Optionen:
+
+<CodeGroup>
+  
+
+```json tsconfig.json {3-8}
+{
+...,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+...
+}
+```
+
+```json tsconfig.app.json {3-8}
+{
+...,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+...
+}
+```
+</CodeGroup>
+      Dadurch kannst du Komponenten mit `@/components/...` importieren.
+    </Step>
+
+    <Step title="Vite Konfiguration anpassen">
+      Installiere notwendige Abhängigkeiten:
+      ```bash console
+      npm install
+      ```
+      <Note>
+      Bei Problemen mit `npm install` (z.B. `ERESOLVE unable to resolve dependency tree`) kannst du den Befehl mit `--force` ausführen:
+      ```bash console
+      npm install --force
+      ```
+      Mehr Informationen findest du [hier](https://ui.shadcn.com/docs/react-19#:~:text=What's,do?).
+      </Note>
+
+      Passe deine `vite.config.ts` Datei nun so an:
+      ```typescript vite.config.ts
+      import path from "path"
+      import tailwindcss from "@tailwindcss/vite"
+      import react from "@vitejs/plugin-react"
+      import { defineConfig } from "vite"
+
+      export default defineConfig({
+        plugins: [react(), tailwindcss()],
+        resolve: {
+          alias: {
+            "@": path.resolve(__dirname, "./src"),
+          },
+        },
+      })
+      ```
+    </Step>
+
+    <Step title="shadcn/ui installieren">
+      Initialisiere shadcn/ui mit:
+      ```bash console
+      npx shadcn@latest init
+      ```
+      Beantworte die Fragen, z.B. zur Basisfarbe (`Neutral` empfohlen).
+      Die Basisfarben kannst du später auch ändern. Dazu siehe [hier](https://ui.shadcn.com/docs/theming#base-colors) und [hier](https://ui.shadcn.com/themes) noch mehr.
+    </Step>
+
+    <Step title="Komponenten hinzufügen">
+      Füge [irgend eine UI-Komponente](https://ui.shadcn.com/docs/components) wie den Button hinzu:
+      ```bash console
+      npx shadcn@latest add button
+      ```
+      oder
+      ```bash console
+      npx shadcn@latest add --all
+      ```
+      um alle Komponenten zu installieren.
+
+      <Tip>
+      Du kannst auf [v4.shadcn.com](https://v4.shadcn.com/) die Komponenten und deren Verwendung anschauen, falls du inspiration brauchst.
+      </Tip>
+    </Step>
+
+    <Step title="Komponenten verwenden">
+      Danach kannst du die Komponenten in deiner App verwenden.
+
+      Beispielhafte Verwendung von solchen Komponenten:
+      ```typescript src/App.tsx {1,6}
+      import { Button } from "@/components/ui/button"
+
+      function App() {
+        return (
+          <div className="flex flex-col items-center justify-center min-h-svh">
+            <Button variant={"outline"}>Click me</Button>
+          </div>
+        )
+      }
+
+      export default App
+      ```
+      <Check>
+      Dieser Button ist jetzt ein vorgestylter Button von shadcn/ui, der bereits alle Tailwind CSS-Klassen enthält.
+      </Check>
+    </Step>
+  </Steps>
+
+Diese Kombination von den Technologien oben bietet eine moderne, performante, gut aussehende und erweiterbare Frontend-Basis.
+
+## Types in TypeScript
+
+Wir haben gelernt, dass TypeScript eine typisierte Sprache ist, die auf JavaScript aufbaut. Die wichtigsten Konzepte sind:
+
+1. **"Normalen" Typen**: TypeScript unterstützt die grundlegenden Datentypen wie `string`, `number`, `boolean`, `null`, `undefined` und `void`.
+
+2. **Arrays**: Arrays können mit dem Typ `Array<T>` definiert werden. Das mag einen an `Java` erinnern, da man in java auch `ArrayList<T>` definieren muss.
+
+3. **Enums**: Enums ermöglichen es, benannte Konstanten zu erstellen, die den Code lesbarer machen.
+
+### Objekte
+
+Wir haben gelernt, dass Objekte in TypeScript mit dem Typ `object` definiert werden können. Es ist jedoch besser, den Typ des Objekts explizit anzugeben, um die Lesbarkeit und Wartbarkeit des Codes zu verbessern.
+
+```typescript example.ts
+type User = {
+  name: string
+  age: number
+}
+```
+
+Um solche Objekte zu benutzen, muss man sie folgenderweisen benützen:
+```typescript example.ts
+const user: User = {
+  name: "John",
+  age: 30,
+}
+
+const ArrayOfUsers: User[] = [
+  { name: "John", age: 30 },
+  { name: "Jane", age: 25 },
+]
+```
+
+
+<Note>
+  Wichtig ist, dass wenn man ein `Type` defininiert, dann muss man ihn in einem anderen File **als `type`** importieren. Zum Beispiel:
+```typescript Object.ts
+export type User = {
+  name: string
+  age: number
+}
+```
+```typescript App.tsx {1}
+import type { User } from "@/types"
+
+function getUser(user: User): string {
+  return `Name: ${user.name}, Age: ${user.age}`
+}
+```
+</Note>
+
+### Funktionen
+
+Funktionen in TypeScript erlauben es, Typen für die Parameter und den Rückgabewert anzugeben. Dies verbessert die Lesbarkeit und Wartbarkeit des Codes erheblich.
+```typescript example.ts
+type User = {
+  name: string
+  age: number
+}
+
+function getUser(user: User): string {
+  return `Name: ${user.name}, Age: ${user.age}`
+}
+```
+
+Somit kann man im Code die Typen der Objekte und deren Eigenschaften definieren. Das ist sehr hilfreich, um den Code leserlicher zu machen und auch um Fehler zu vermeiden. In unseren Augen ist TypeScript besser als vanilla JavaScript, da es den Code leserlicher und auch Strukturierter macht. 
+
