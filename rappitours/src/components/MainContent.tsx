@@ -5,6 +5,7 @@ import DeleteMultipleTrailsDialog from "@/components/dialogs/DeleteMultipleTrail
 import DeleteSingleTrailDialog from "@/components/dialogs/DeleteSingleTrailDialog";
 import defaultTrails from "@/components/data/defaultTrails";
 import EditTrailDialog from "@/components/dialogs/EditTrailDialog";
+import {Badge} from "@/components/ui/badge.tsx";
 import type {Trail} from "@/types/Trail";
 
 export const TRAILS_KEY = "trails";
@@ -61,7 +62,9 @@ export default function MainContent() {
                                             <span
                                                 className="text-muted-foreground text-xs font-normal">({trail.id})</span>
                                         </div>
-                                        <span className="pl-30">
+                                        {isPast ? <Badge variant={"destructive"} className={"w-17"}>Expired</Badge> :
+                                            <Badge className={"bg-green-600 text-white w-17"}>Active</Badge>}
+                                        <span>
                                         {new Date(trail.timedate).toLocaleString()}
                                     </span>
                                     </AccordionTrigger>
@@ -70,19 +73,19 @@ export default function MainContent() {
                                             <div>
                                                 <div>{trail.from} to {trail.to}</div>
                                                 <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not
-                                                    implemented yet]
+                                                     implemented yet]
                                                 </div>
                                                 <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not
-                                                    implemented yet]
+                                                     implemented yet]
                                                 </div>
                                                 <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not
-                                                    implemented yet]
+                                                     implemented yet]
                                                 </div>
                                             </div>
                                             <div className="flex justify-between">
                                                 <div className="flex flex-col gap-2">
                                                     <div
-                                                        className={`w-full h-[90px] ${isPast ? "" : "bg-primary"} rounded-lg shadow-md flex mb-5 items-center justify-center text-center`}>
+                                                        className={`w-full h-[90px] ${isPast ? "bg-secondary text-white" : "bg-primary"} text-black rounded-lg shadow-md flex mb-5 items-center justify-center text-center`}>
                                                         Picture or Map
                                                     </div>
                                                     <div className="gap-2 flex">
