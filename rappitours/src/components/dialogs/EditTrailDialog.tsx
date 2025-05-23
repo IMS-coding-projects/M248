@@ -13,7 +13,7 @@ export default function EditTrailDialog() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant={"default"} className={"px-8"}>
+                <Button variant={"default"} className={"w-9/20"}>
                     Edit Trail
                 </Button>
             </DialogTrigger>

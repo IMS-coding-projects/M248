@@ -28,13 +28,13 @@ export default function MainContent() {
     }, [reloadTrails]);
 
     return (
-        <div id="main" className="container mx-auto px-18 pt-6 h-screen flex flex-col items-center w-full">
+        <div id="main" className="container mx-auto px-2 sm:px-6 pt-6 min-h-screen flex flex-col items-center w-full">
             <div className="mb-4 flex justify-between items-center w-full">
                 <NewTrailDialog reloadTrails={reloadTrails} />
                 <DeleteMultipleTrailsDialog />
             </div>
             <div id="trails" className="w-full flex flex-col items-center">
-                <Accordion type="multiple" className="w-full max-w-2xl">
+                <Accordion type="multiple" className="w-full max-w-xs sm:max-w-md md:max-w-2xl">
                     {trails.length === 0 && (
                         <div className="flex flex-col items-center justify-center w-full h-full">
                             <h2 className="text-lg font-semibold">No trails available</h2>
@@ -49,24 +49,24 @@ export default function MainContent() {
                                     {trail.name}
                                     <span className="text-xs font-normal">({trail.id})</span>
                                 </div>
-                                <span className={"pl-30"}>
+                                <span>
                                     {new Date(trail.timedate).toLocaleString()}
                                 </span>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className={"flex justify-between"}>
-                                    <div>
+                                <div className={"flex flex-col sm:flex-row justify-between"}>
+                                    <div className={"w-full"}>
                                         <div>{trail.from} to {trail.to}</div>
                                         <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                         <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                         <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                     </div>
-                                    <div className="flex justify-between">
+                                    <div className="justify-end w-full">
                                         <div className="flex flex-col gap-2">
-                                            <div className={"w-full h-[90px] bg-primary rounded-lg shadow-md flex mb-5 items-center justify-center text-center"}>
+                                            <div className={"dark:text-black mt-6 sm:mt-0 w-full h-[90px] bg-primary rounded-lg shadow-md flex items-center justify-center text-center"}>
                                                 Picture or Map
                                             </div>
-                                            <div className={"gap-2 flex"}>
+                                            <div className={"gap-2 flex w-full justify-between"}>
                                                 <EditTrailDialog/>
                                                 <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
                                             </div>

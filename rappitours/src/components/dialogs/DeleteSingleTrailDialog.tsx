@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button.tsx";
 import {toast} from "sonner";
 import { TRAILS_KEY } from "@/components/MainContent.tsx";
 
-export default function DeleteSingleTrailDialog({ reloadTrails, id, ...props }) {
+export default function DeleteSingleTrailDialog({ id, reloadTrails }: { id: string, reloadTrails: () => void }) {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="destructive" className={"px-10 bg-secondary hover:bg-secondary/90"}>
+                <Button variant="destructive" className={"w-9/20"}>
                     Delete
                 </Button>
             </AlertDialogTrigger>
