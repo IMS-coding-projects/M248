@@ -1,11 +1,11 @@
-import { useEffect, useState, useCallback } from "react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import {useEffect, useState, useCallback} from "react";
+import {Accordion, AccordionItem, AccordionTrigger, AccordionContent} from "@/components/ui/accordion";
 import NewTrailDialog from "@/components/dialogs/NewTrailDialog";
 import DeleteMultipleTrailsDialog from "@/components/dialogs/DeleteMultipleTrailsDialog";
 import DeleteSingleTrailDialog from "@/components/dialogs/DeleteSingleTrailDialog";
 import defaultTrails from "@/components/data/defaultTrails";
 import EditTrailDialog from "@/components/dialogs/EditTrailDialog";
-import type { Trail } from "@/types/Trail";
+import type {Trail} from "@/types/Trail";
 
 export const TRAILS_KEY = "trails";
 
@@ -13,11 +13,11 @@ export default function MainContent() {
     const [trails, setTrails] = useState<Array<Trail>>([]);
 
     const reloadTrails = useCallback(() => {
-        const storedTrails = localStorage.getItem(TRAILS_KEY);
+        let storedTrails = localStorage.getItem(TRAILS_KEY);
         if (storedTrails) {
             setTrails(JSON.parse(storedTrails));
         } else {
-            const defaults = defaultTrails();
+            let defaults = defaultTrails();
             localStorage.setItem(TRAILS_KEY, JSON.stringify(defaults));
             setTrails(defaults);
         }
@@ -28,10 +28,10 @@ export default function MainContent() {
     }, [reloadTrails]);
 
     return (
-        <main id="main" className="container min-h-screen mx-auto px-18 pt-6 flex flex-col items-center w-full ">
+        <div id="main" className="container mx-auto px-2 sm:px-6 pt-6 min-h-screen flex flex-col items-center w-full">
             <div className="mb-4 flex justify-between items-center w-full">
-                <NewTrailDialog reloadTrails={reloadTrails} />
-                <DeleteMultipleTrailsDialog />
+                <NewTrailDialog reloadTrails={reloadTrails}/>
+                <DeleteMultipleTrailsDialog/>
             </div>
             <div id="trails" className="w-full flex flex-col items-center">
                 <Accordion type="multiple" className="w-full max-w-2xl">
@@ -49,27 +49,31 @@ export default function MainContent() {
                                     {trail.name}
                                     <span className="text-xs font-normal">({trail.id})</span>
                                 </div>
-                                <span className={"pl-30"}>
+                                <span>
                                     {new Date(trail.timedate).toLocaleString()}
                                 </span>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className={"flex justify-between"}>
+                                <div className={"flex flex-col sm:flex-row justify-between"}>
                                     <div>
                                         <div>{trail.from} to {trail.to}</div>
-                                        <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
-                                        <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
-                                        <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
+                                        <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented
+                                             yet]
+                                        </div>
+                                        <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented
+                                             yet]
+                                        </div>
+                                        <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]
+                                        </div>
                                     </div>
-                                    <div className="flex justify-between">
-                                        <div className="flex flex-col gap-2">
-                                            <div className={"w-full h-[90px] bg-primary rounded-lg shadow-md flex mb-5 items-center justify-center text-center"}>
-                                                Picture or Map
-                                            </div>
-                                            <div className={"mt-2 sm:mt-0 gap-2 flex w-full justify-between"}>
-                                                <EditTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
-                                                <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
-                                            </div>
+                                    <div className="flex flex-col mt-5 sm:mt-0  sm:min-w-2/5">
+                                        <div
+                                            className={"w-full h-[90px] bg-primary rounded-lg shadow-md flex mb-5 items-center justify-center text-center"}>
+                                            Picture or Map
+                                        </div>
+                                        <div className={"flex w-full justify-between"}>
+                                            <EditTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
+                                            <DeleteSingleTrailDialog id={trail.id} reloadTrails={reloadTrails}/>
                                         </div>
                                     </div>
                                 </div>
@@ -78,6 +82,6 @@ export default function MainContent() {
                     ))}
                 </Accordion>
             </div>
-        </main>
+        </div>
     );
 }

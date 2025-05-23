@@ -11,15 +11,18 @@ function Accordion({
 }
 
 function AccordionItem({
-  className,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Item>) {
+                         className,
+                         ...props
+                       }: React.ComponentProps<typeof AccordionPrimitive.Item>) {
   return (
-    <AccordionPrimitive.Item
-      data-slot="accordion-item"
-      className={cn("border-b last:border-b-0 border rounded-lg shadow-md px-4 my-4 bg-white dark:bg-secondary min-w-[550px] min-h-[0px] sm:min-w-[550px] sm:min-h-[0px] hover:no-underline", className)}
-      {...props}
-    />
+      <AccordionPrimitive.Item
+          data-slot="accordion-item"
+          className={cn(
+              "border-b last:border-b-0 border rounded-lg shadow-md px-2 sm:px-4 my-4 bg-white dark:bg-secondary w-full max-w-full sm:max-w-2xl min-h-0 hover:no-underline",
+              className
+          )}
+          {...props}
+      />
   )
 }
 
