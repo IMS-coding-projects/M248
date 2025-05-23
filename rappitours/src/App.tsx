@@ -8,12 +8,14 @@ import { Toaster } from './components/ui/sonner';
 function App() {
   return (
     <>
-      <ThemeProvider>
-        <Header/>
-        <MainContent/>
-        <Footer/>
-        <Toaster />
-      </ThemeProvider>
+        <div className="flex flex-col min-h-screen">
+            <ThemeProvider>
+                <Header/>
+                <MainContent/>
+                <Footer/>
+                <Toaster />
+            </ThemeProvider>
+        </div>
     </>
   )
 }

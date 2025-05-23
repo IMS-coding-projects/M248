@@ -38,7 +38,7 @@ export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => 
                 timedate: dateTime.toISOString(),
                 id: uuidv4()
             };
-            let storedTrails = localStorage.getItem(TRAILS_KEY);
+            const storedTrails = localStorage.getItem(TRAILS_KEY);
             if (storedTrails) {
                 const trails = JSON.parse(storedTrails);
                 trails.push(trail);
@@ -71,14 +71,14 @@ export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => 
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <NewTrail dateTime={dateTime} setDateTime={setDateTime} />
                     <DialogFooter className="mt-4">
-                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                            Create
-                        </Button>
                         <DialogClose asChild>
-                            <Button type="button" variant="secondary">
+                            <Button type="button" variant="outline">
                                 Cancel
                             </Button>
                         </DialogClose>
+                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                            Create
+                        </Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

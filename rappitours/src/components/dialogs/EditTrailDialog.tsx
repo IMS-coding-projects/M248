@@ -81,14 +81,15 @@ export default function EditTrailDialog({ id, reloadTrails }: { id: string, relo
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <EditTrail setDateTime={setDateTime} trail={trail} />
                     <DialogFooter className="mt-4">
-                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                            Save
-                        </Button>
                         <DialogClose asChild>
-                            <Button type="button" variant="secondary">
+                            <Button type="button" variant="outline">
                                 Cancel
                             </Button>
                         </DialogClose>
+                        <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                            Save
+                        </Button>
+
                     </DialogFooter>
                 </form>
             </DialogContent>

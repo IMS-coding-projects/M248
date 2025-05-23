@@ -13,11 +13,11 @@ export default function MainContent() {
     const [trails, setTrails] = useState<Array<Trail>>([]);
 
     const reloadTrails = useCallback(() => {
-        let storedTrails = localStorage.getItem(TRAILS_KEY);
+        const storedTrails = localStorage.getItem(TRAILS_KEY);
         if (storedTrails) {
             setTrails(JSON.parse(storedTrails));
         } else {
-            let defaults = defaultTrails();
+            const defaults = defaultTrails();
             localStorage.setItem(TRAILS_KEY, JSON.stringify(defaults));
             setTrails(defaults);
         }
@@ -28,20 +28,20 @@ export default function MainContent() {
     }, [reloadTrails]);
 
     return (
-        <div id="main" className="container mx-auto px-2 sm:px-6 pt-6 min-h-screen flex flex-col items-center w-full">
+        <main id="main" className="container min-h-screen mx-auto px-18 pt-6 flex flex-col items-center w-full ">
             <div className="mb-4 flex justify-between items-center w-full">
                 <NewTrailDialog reloadTrails={reloadTrails} />
                 <DeleteMultipleTrailsDialog />
             </div>
             <div id="trails" className="w-full flex flex-col items-center">
-                <Accordion type="multiple" className="w-full max-w-xs sm:max-w-md md:max-w-2xl">
+                <Accordion type="multiple" className="w-full max-w-2xl">
                     {trails.length === 0 && (
                         <div className="flex flex-col items-center justify-center w-full h-full">
                             <h2 className="text-lg font-semibold">No trails available</h2>
                             <p className="text-sm text-gray-500">Please create a new trail.</p>
                         </div>
                     )}
-                    
+
                     {trails.map((trail) => (
                         <AccordionItem key={trail.id} value={trail.id}>
                             <AccordionTrigger className={"flex justify-between items-center"}>
@@ -49,21 +49,21 @@ export default function MainContent() {
                                     {trail.name}
                                     <span className="text-xs font-normal">({trail.id})</span>
                                 </div>
-                                <span>
+                                <span className={"pl-30"}>
                                     {new Date(trail.timedate).toLocaleString()}
                                 </span>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className={"flex flex-col sm:flex-row justify-between"}>
-                                    <div className={"w-full"}>
+                                <div className={"flex justify-between"}>
+                                    <div>
                                         <div>{trail.from} to {trail.to}</div>
                                         <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                         <div>Snow Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                         <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not implemented yet]</div>
                                     </div>
-                                    <div className="justify-end w-full">
+                                    <div className="flex justify-between">
                                         <div className="flex flex-col gap-2">
-                                            <div className={"dark:text-black mt-6 sm:mt-0 w-full h-[90px] bg-primary rounded-lg shadow-md flex items-center justify-center text-center"}>
+                                            <div className={"w-full h-[90px] bg-primary rounded-lg shadow-md flex mb-5 items-center justify-center text-center"}>
                                                 Picture or Map
                                             </div>
                                             <div className={"mt-2 sm:mt-0 gap-2 flex w-full justify-between"}>
@@ -78,6 +78,6 @@ export default function MainContent() {
                     ))}
                 </Accordion>
             </div>
-        </div>
+        </main>
     );
 }
