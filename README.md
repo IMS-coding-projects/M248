@@ -39,3 +39,9 @@ You can find the documentation of this module [**here.**](https://ims-coding-pro
 
 5. **Open the Browser**
     Unless you manually changed the port, this app will run on [localhost:3000](http://localhost:3000)
+
+---
+
+## License
+
+This project [is licensed](./LICENSE) under the GNU General Public License v3.0. To see what you can do, check out the [LICENSE](./LICENSE) page.
