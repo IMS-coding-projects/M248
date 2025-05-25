@@ -1,6 +1,12 @@
+<div align="center">
+
 # RappiTours Trails Management App
 
 This folder contains the source code of the RappiTours Trails Management App
+
+</div>
+
+---
 
 ## How to Run
 
@@ -28,3 +34,9 @@ This folder contains the source code of the RappiTours Trails Management App
 
 5. **Open the Browser**
     Unless you manually changed the port, this app will run on [localhost:3000](http://localhost:3000)
+
+---
+
+## License
+
+This project [is licensed](../LICENSE) under the GNU General Public License v3.0. To see what you can do, check out the [LICENSE](../LICENSE) page.
