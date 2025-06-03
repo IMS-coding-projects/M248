@@ -1,15 +1,24 @@
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog.tsx";
-import { Button } from "@/components/ui/button.tsx";
-import { Input } from "@/components/ui/input.tsx";
-import { Label } from "@/components/ui/label.tsx";
-import { DateTimePicker24h } from "@/components/ui/DateTimePicker24h.tsx";
-import { TRAILS_KEY } from "@/components/MainContent.tsx";
-import type { Trail } from "@/types/Trail";
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog.tsx";
+import {Button} from "@/components/ui/button.tsx";
+import {Input} from "@/components/ui/input.tsx";
+import {Label} from "@/components/ui/label.tsx";
+import {DateTimePicker24h} from "@/components/ui/DateTimePicker24h.tsx";
+import {TRAILS_KEY} from "@/components/MainContent.tsx";
+import type {Trail} from "@/types/Trail";
 import * as React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { toast } from "sonner";
+import {v4 as uuidv4} from "uuid";
+import {toast} from "sonner";
 
-export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => void }) {
+export default function NewTrailDialog({reloadTrails}: { reloadTrails: () => void }) {
     const [dateTime, setDateTime] = React.useState<Date>();
     const [dialogOpen, setDialogOpen] = React.useState(false);
     const formRef = React.useRef<HTMLFormElement>(null);
@@ -57,7 +66,8 @@ export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => 
     return (
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
-                <Button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg shadow-md hover:bg-primary/90">
+                <Button
+                    className="px-4 py-2 bg-primary text-primary-foreground rounded-lg shadow-md hover:bg-primary/90">
                     New Trail
                 </Button>
             </DialogTrigger>
@@ -69,7 +79,7 @@ export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => 
                     </DialogDescription>
                 </DialogHeader>
                 <form ref={formRef} onSubmit={handleSubmit}>
-                    <NewTrail dateTime={dateTime} setDateTime={setDateTime} />
+                    <NewTrail dateTime={dateTime} setDateTime={setDateTime}/>
                     <DialogFooter className="mt-4">
                         <DialogClose asChild>
                             <Button type="button" variant="outline">
@@ -86,24 +96,24 @@ export default function NewTrailDialog({ reloadTrails } : { reloadTrails: () => 
     );
 }
 
-function NewTrail({ dateTime, setDateTime }: { dateTime?: Date, setDateTime: (date: Date) => void }) {
+function NewTrail({dateTime, setDateTime}: { dateTime?: Date, setDateTime: (date: Date) => void }) {
     return (
         <div className="grid gap-4">
             <div className="grid gap-2">
                 <Label htmlFor="trail-name">Trail Name</Label>
-                <Input id="trail-name" type="text" placeholder="Enter trail name" required />
+                <Input id="trail-name" type="text" placeholder="Enter trail name" required/>
             </div>
             <div className="grid gap-2">
                 <Label htmlFor="trail-from">From:</Label>
-                <Input id="trail-from" type="text" placeholder="Origin" required />
+                <Input id="trail-from" type="text" placeholder="Origin" required/>
             </div>
             <div className="grid gap-2">
                 <Label htmlFor="trail-to">To:</Label>
-                <Input id="trail-to" type="text" placeholder="Destination" required />
+                <Input id="trail-to" type="text" placeholder="Destination" required/>
             </div>
             <div className="grid gap-2">
                 <Label htmlFor="trail-date">Date & Time:</Label>
-                <DateTimePicker24h selectedDate={dateTime} onDateChange={setDateTime} />
+                <DateTimePicker24h selectedDate={dateTime} onDateChange={setDateTime}/>
             </div>
         </div>
     );

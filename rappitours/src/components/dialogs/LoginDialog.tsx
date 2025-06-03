@@ -1,6 +1,6 @@
-import { LogInIcon } from "lucide-react"
-import { cn } from "@/lib/utils.ts"
-import { Button } from "@/components/ui/button.tsx"
+import {LogInIcon} from "lucide-react"
+import {cn} from "@/lib/utils.ts"
+import {Button} from "@/components/ui/button.tsx"
 import {
     Dialog,
     DialogClose,
@@ -11,8 +11,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog.tsx"
-import { Input } from "@/components/ui/input.tsx"
-import { Label } from "@/components/ui/label.tsx"
+import {Input} from "@/components/ui/input.tsx"
+import {Label} from "@/components/ui/label.tsx"
 import {toast} from "sonner";
 
 export function LoginDialog() {
@@ -31,7 +31,7 @@ export function LoginDialog() {
                         Login with your account to manage your trails.
                     </DialogDescription>
                 </DialogHeader>
-                <LoginForm />
+                <LoginForm/>
                 <DialogFooter className="flex sm:justify-center">
                     <DialogClose asChild>
                         <Button type="button" variant="outline">
@@ -75,14 +75,14 @@ export function LoginForm({
                         </div>
                         <Input id="password" type="password" required/>
                     </div>
-                    <Button type="submit" className="w-full"                        
+                    <Button type="submit" className="w-full"
                             onClick={(event) => {
                                 event.preventDefault()
                                 toast("Uh oh!", {
                                         description: "This feature is not implemented yet :(",
                                     }
                                 )
-                    }}>
+                            }}>
                         Login
                     </Button>
                 </div>

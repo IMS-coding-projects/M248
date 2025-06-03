@@ -3,10 +3,11 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/co
 import NewTrailDialog from "@/components/dialogs/NewTrailDialog";
 import DeleteMultipleTrailsDialog from "@/components/dialogs/DeleteMultipleTrailsDialog";
 import DeleteSingleTrailDialog from "@/components/dialogs/DeleteSingleTrailDialog";
-import defaultTrails from "@/components/data/defaultTrails";
+import defaultTrails from "@/data/defaultTrails";
 import EditTrailDialog from "@/components/dialogs/EditTrailDialog";
 import {Badge} from "@/components/ui/badge.tsx";
 import type {Trail} from "@/types/Trail";
+import Map from "@/components/Map";
 
 export const TRAILS_KEY = "trails";
 
@@ -69,9 +70,9 @@ export default function MainContent() {
                                     </span>
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <div className="flex justify-between">
+                                        <div className="flex flex-col sm:flex-row justify-between">
                                             <div>
-                                                <div>{trail.from} to {trail.to}</div>
+                                                <div className={"font-bold"}>{trail.from} to {trail.to}</div>
                                                 <div>Rain Probability: {Math.floor(Math.random() * 100)}% [not
                                                      implemented yet]
                                                 </div>
@@ -81,14 +82,15 @@ export default function MainContent() {
                                                 <div>Ice Probability: {Math.floor(Math.random() * 100)}% [not
                                                      implemented yet]
                                                 </div>
+                                                <br/>
                                             </div>
                                             <div className="flex justify-between">
-                                                <div className="flex flex-col gap-2">
+                                                <div className="w-full flex flex-col min-w-[300px]">
                                                     <div
-                                                        className={`w-full h-[90px] ${isPast ? "bg-secondary text-white" : "bg-primary"} text-black rounded-lg shadow-md flex mb-5 items-center justify-center text-center`}>
-                                                        Picture or Map
+                                                        className={`w-full h-[140px] ${isPast ? "bg-secondary" : "bg-primary"} rounded-lg shadow-md mb-5 overflow-hidden`}>
+                                                        <Map from={trail.from} to={trail.to} />
                                                     </div>
-                                                    <div className="gap-2 flex">
+                                                    <div className="gap-2 flex w-full justify-between"> 
                                                         <EditTrailDialog disabled={isPast} id={trail.id}
                                                                          reloadTrails={reloadTrails}/>
                                                         <DeleteSingleTrailDialog id={trail.id}
