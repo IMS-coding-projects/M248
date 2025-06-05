@@ -67,8 +67,8 @@
     }
   },
   "banner": {
-    "content": "[🎉🌲 Release 1.0: Trails Management App is officially released! 🏞️ ✨](https://github.com/IMS-coding-projects/M248/releases/tag/v1.0)",
-    "dismissible": false
+    "content": "[🎉🌲 Patch 1.0.1: Trails Management App just got better! 🏞️ ✨](https://github.com/IMS-coding-projects/M248/releases/tag/v1.0.1)",
+    "dismissible": true
   },
   "contextual": {
   "options": [
@@ -84,8 +84,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Release 1.0 🎉",
-      "href": "https://github.com/IMS-coding-projects/M248/releases/tag/v1.0"
+      "label": "Patch 1.0.1 🎉",
+      "href": "https://github.com/IMS-coding-projects/M248/releases/tag/v1.0.1"
     }
   },
   "footer": {
@@ -95,18 +95,18 @@
   },
   "seo": {
     "metatags": {
-      "title": "RappiTours Trail Management System Documentation",
-      "description": "Documentation for the Trails Management System for RappiTours",
-      "keywords": "RappiTours, Management System, Trails",
+      "title": "RappiTours Trail Management Documentation",
+      "description": "Documentation for the Trails Management App for RappiTours",
+      "keywords": "RappiTours, Management, Trails",
       "robots": "noindex, nofollow",
-      "og:title": "RappiTours Trail Management System Documentation",
+      "og:title": "RappiTours Trail Management Documentation",
       "og:type": "website",
-      "og:description": "Documentation for the Trails Management System for RappiTours",
-      "og:image": "/logo/dark.svg",
+      "og:description": "Documentation for the Trails Management App for RappiTours",
+      "og:image": "/logo/dark.png",
       "og:url": "https://ims-coding-projects.mintlify.app/",
-      "twitter:title": "RappiTours Trail Management System Documentation",
-      "twitter:description": "Documentation for the Trails Management System for RappiTours",
-      "twitter:image": "/logo/dark.svg",
+      "twitter:title": "RappiTours Trail Management Documentation",
+      "twitter:description": "Documentation for the Trails Management App for RappiTours",
+      "twitter:image": "/logo/dark.png",
       "theme-color": "#B8860B"
     },
     "indexing": "navigable"
