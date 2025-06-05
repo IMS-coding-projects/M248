@@ -34,12 +34,12 @@ This repository contains the source code of the RappiTours Trails Management App
 > You need to modify the `.env` file with your own environment variables. Check the `.env.example` file for which tokens/variables you need to set.
 > If you do not have any tokens, you can contact us for a test token.
 
-5**Run the Project**
+5. **Run the Project**
     ```bash
     npm run dev
     ```
 
-5. **Open the Browser**
+6. **Open the Browser**
     Unless you manually changed the port, this app will run on [localhost:3000](http://localhost:3000)
 
 ---
