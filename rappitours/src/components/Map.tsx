@@ -125,11 +125,11 @@ const Map: React.FC<MapProps> = ({from, to}) => {
         }
 
         // Add markers
-        new mapboxgl.Marker({color: '#F3D34A'})
+        new mapboxgl.Marker({color: '#3CB371'})
             .setLngLat(fromCoords)
             .addTo(map.current);
 
-        new mapboxgl.Marker({color: '#000'})
+        new mapboxgl.Marker({color: '#C0392B'})
             .setLngLat(toCoords)
             .addTo(map.current);
 
