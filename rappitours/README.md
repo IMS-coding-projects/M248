@@ -27,7 +27,15 @@ This folder contains the source code of the RappiTours Trails Management App
 > [!IMPORTANT]
 > You need to use the `--force` tag, because of a conflict between the react version and ui.shadcn. For more information, [visit this site](https://ui.shadcn.com/docs/react-19#:~:text=What's,do?)
 
-4. **Run the Project**
+4. **Copy and Modify Environment Variables**
+    ```bash
+    cp .env.example .env
+    ```
+> [!NOTE]
+> You need to modify the `.env` file with your own environment variables. Check the `.env.example` file for which tokens/variables you need to set.
+> If you do not have any tokens, you can contact us for a test token.
+
+5**Run the Project**
     ```bash
     npm run dev
     ```

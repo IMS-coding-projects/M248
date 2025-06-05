@@ -118,13 +118,7 @@ const Map: React.FC<MapProps> = ({from, to}) => {
             toCoords.some(coord => isNaN(coord) || !isFinite(coord))) {
             return;
         }
-
-        const markers = document.getElementsByClassName('mapboxgl-marker');
-        while (markers[0]) {
-            markers[0].remove();
-        }
-
-        // Add markers
+        
         new mapboxgl.Marker({color: '#3CB371'})
             .setLngLat(fromCoords)
             .addTo(map.current);

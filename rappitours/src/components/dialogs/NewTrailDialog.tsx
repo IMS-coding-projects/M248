@@ -17,6 +17,8 @@ import type {Trail} from "@/types/Trail";
 import * as React from "react";
 import {v4 as uuidv4} from "uuid";
 import {toast} from "sonner";
+import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert.tsx";
+import {MessageSquareWarning} from "lucide-react";
 
 export default function NewTrailDialog({reloadTrails}: { reloadTrails: () => void }) {
     const [dateTime, setDateTime] = React.useState<Date>();
@@ -111,6 +113,16 @@ function NewTrail({dateTime, setDateTime}: { dateTime?: Date, setDateTime: (date
                 <Label htmlFor="trail-to">To:</Label>
                 <Input id="trail-to" type="text" placeholder="Destination" required/>
             </div>
+            <Alert>    
+                <AlertTitle className={"flex gap-2"}>
+                    <MessageSquareWarning></MessageSquareWarning>
+                    Use precise origin and destination names
+                </AlertTitle>
+                <AlertDescription>
+                    To ensure accurate geocoding and avoid issues with trail creation, please use full and precise names for locations.
+                    For example, use "New York City, USA" instead of just "New York" to ensure accurate geocoding.
+                </AlertDescription>
+            </Alert>
             <div className="grid gap-2">
                 <Label htmlFor="trail-date">Date & Time:</Label>
                 <DateTimePicker24h selectedDate={dateTime} onDateChange={setDateTime}/>
