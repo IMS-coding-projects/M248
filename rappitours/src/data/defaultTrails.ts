@@ -20,8 +20,8 @@ export default function DefaultTrails() {
             name: "Sunset Trail",
             id: uuidv4(),
             timedate: new Date().toISOString(),
-            from: "Av. Brasília, 1400-038 Lisboa, Portugal",
-            to: "Vatican City"
+            from: "WR33+XH3, TIFR, Old Navy Nagar, Colaba, Mumbai, Maharashtra 400005, India",
+            to: "4RV4+75C, versova jetty, Mandvi Galli, Versova, Andheri West, Mumbai, Maharashtra 400061, India"
         }
     ];
 }
