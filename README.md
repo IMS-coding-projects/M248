@@ -42,6 +42,11 @@ This repository contains the source code of the RappiTours Trails Management App
 6. **Open the Browser**
     Unless you manually changed the port, this app will run on [localhost:3000](http://localhost:3000)
 
+> [!TIP]
+> The app has default tours. One tour is from start on disabled, one will be disabled after 2 minutes and the third one after 2 hours.
+>
+> To refresh the default trails, you have to remove them from the localStorage. They are saved under the `trails` key.
+
 ---
 
 ## License
